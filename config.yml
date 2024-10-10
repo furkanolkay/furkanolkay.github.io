@@ -1,0 +1,129 @@
+baseURL: "https://furkanolkay.com/"
+title: "Furkan Olkay"
+paginate: 1000
+theme:
+  - PaperMod
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+# disableKinds: ["sitemap"]
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: about
+      name: About Me
+      url: /about/
+      weight: 2
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 3
+    - identifier: search
+      name: 🔍
+      url: /search/
+      weight: 100
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: MDM
+  description: "In my personal blog, I share insights from my experience as a software developer and team lead, including my work with Flutter."
+  keywords: [Software, Developer, Mobile Development Manager]
+  author: Furkan Olkay
+  DateFormat: "2024 January 14"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+  enableQuicklink: true
+
+  assets:
+    disableHLJS: false # to disable highlight.js
+    disableFingerprinting: true
+    favicon: "/furkanolkay.jpeg"
+    favicon16x16: "/furkanolkay.jpeg"
+    favicon32x32: "/furkanolkay.jpeg"
+    apple_touch_icon: "/furkanolkay.jpeg"
+    safari_pinned_tab: "/furkanolkay.jpeg"
+
+  label:
+    icon: "/logo.svg"
+    iconHeight: 45
+    text: " "
+
+  homeInfoParams:
+    Title: ":(){ :|:& };:"
+    Content: "test test tset"
+
+  profileMode:
+    enabled: true
+    title: "Hi! There"
+    subtitle: "Software Engineer | Mobile Team Lead | Flutter Developer "
+    imageUrl: "/furkanolkay.jpeg"
+    imageWidth: 200
+    imageHeight: 200
+    imageTitle: image
+    buttons:
+      - name: Blog
+        url: /blog
+        
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/furkanolkay"
+    - name: linkedin
+      url: "https://linkedin.com/in/furkan-saffet-olkay"
+    - name: medium
+      url: "https://medium.com/@furkanolkay"
+    - name: twitter
+      url: "https://twitter.com/furkanolkay"
+    - name: instagram
+      url: "https://instagram.com/furkan_olkay"    
+    - name: email
+      url: "mailto:contact@furkanolkay.com"
+  #  - name: cv
+  #    url: "https://www.google.com"
+
+  cover:
+    hidden: false
+    hiddenInList: true
+    hiddenInSingle: false
+    linkFullImages: false
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+
