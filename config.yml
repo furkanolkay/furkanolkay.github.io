@@ -45,7 +45,7 @@ params:
   keywords: [Software, Developer, Mobile Development Manager]
   author: Furkan Olkay
   DateFormat: "2024 January 14"
-  defaultTheme: auto
+  defaultTheme: dark
   disableThemeToggle: false
 
   ShowReadingTime: true
