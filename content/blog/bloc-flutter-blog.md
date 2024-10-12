@@ -1,9 +1,10 @@
 ---
 title: Flutter BloC + Freezed
 date: '2022-05-20T13:48:09.071Z'
-categories: []
-keywords: []
+categories: ["Blog","Github","Flutter"]
+keywords: ["Blog","Github","Flutter"]
 slug: /@furkanolkay/flutter-bloc-freezed
+tags: ["Blog","Github","Flutter"]
 ---
 
 Hello everyone,

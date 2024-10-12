@@ -5,6 +5,7 @@ categories: []
 keywords: []
 slug: >-
   /@furkanolkay/how-to-create-open-source-project-pr
+tags: ["Blog","Flutter","Github"]
 
 ---
 

@@ -1,9 +1,10 @@
 ---
 title: Flutter Stream Structure
 date: '2022-09-01T19:23:53.496Z'
-categories: []
-keywords: []
+categories: ["Blog","Github", "Flutter"]
+keywords: ["Blog","Github", "Flutter"]
 slug: /@furkanolkay/flutter-stream-structure
+tags: ["Blog","Github", "Flutter"]
 ---
 
 Hello everyone! In this article, I will explain the use of **_Stream_** in **_Flutter_** through an example.

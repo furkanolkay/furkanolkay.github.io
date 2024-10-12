@@ -1,9 +1,10 @@
 ---
 title: Flutter Drag&Drop
 date: '2022-02-02T08:30:03.770Z'
-categories: []
-keywords: []
+categories: ["Blog","Flutter","Github"]
+keywords: ["Blog","Flutter","Github"]
 slug: /@furkanolkay/flutter-drag-drop
+tags: ["Blog","Flutter","Github"]
 
 ---
 
