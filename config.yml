@@ -84,6 +84,7 @@ params:
   label:
     icon: "/logo.svg"
     iconHeight: 100
+    iconWidth: 50
     text: " "
 
   homeInfoParams:
