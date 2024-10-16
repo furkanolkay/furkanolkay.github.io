@@ -75,11 +75,11 @@ params:
   assets:
     disableHLJS: false # to disable highlight.js
     disableFingerprinting: true
-    favicon: "/furkanolkay.jpeg"
-    favicon16x16: "/furkanolkay.jpeg"
-    favicon32x32: "/furkanolkay.jpeg"
-    apple_touch_icon: "/furkanolkay.jpeg"
-    safari_pinned_tab: "/furkanolkay.jpeg"
+    favicon: "/furkanolkay.webp"
+    favicon16x16: "/furkanolkay.webp"
+    favicon32x32: "/furkanolkay.webp"
+    apple_touch_icon: "/furkanolkay.webp"
+    safari_pinned_tab: "/furkanolkay.webp"
 
   label:
     icon: "/logo.svg"
@@ -94,7 +94,7 @@ params:
     enabled: true
     title: "Hi! There"
     subtitle: "Software Engineer | Mobile Team Lead | Flutter Developer"
-    imageUrl: "/furkanolkay.jpeg"
+    imageUrl: "/furkanolkay.webp"
     imageWidth: 200
     imageHeight: 200
     imageTitle: image
