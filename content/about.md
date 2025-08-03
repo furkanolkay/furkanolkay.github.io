@@ -16,7 +16,9 @@ UseHugoToc: false
 
 ---
 
-![about](/img/about.jpeg)
-Hello! I’m Furkan Saffet Olkay, an experienced mobile software developer with a strong focus on Flutter. With over five years of experience in mobile development and a proven track record in managing mobile development teams, I specialize in creating high-performance, cross-platform applications that deliver exceptional user experiences.
+![about](/img/about.png)
+Hello! I’m Furkan Saffet Olkay, an experienced software developer with a strong focus on Flutter and a growing expertise in backend development with Java and Spring Boot. With over five years of experience in mobile development and a proven track record in managing development teams, I specialize in building high-performance, cross-platform applications that deliver exceptional user experiences.
 
-For the past five years, I have been dedicated to designing and developing innovative mobile applications as a Mobile Software Developer. My career spans various roles, including Mobile Developer Manager, where I have led teams in creating robust and scalable mobile solutions. My passion for Flutter drives me to leverage its capabilities to build beautiful, responsive, and high-performance apps for both iOS and Android platforms.
+Throughout my career, I’ve designed and developed innovative mobile applications, and served as a Mobile Developer Manager, leading teams in creating robust and scalable solutions. While Flutter remains my primary strength, I have also been expanding into backend development—designing RESTful APIs and microservices using Java and the Spring Boot framework. This full-stack perspective helps me build more integrated and efficient systems, bridging the gap between frontend and backend.
+
+I'm passionate about writing clean, maintainable code and constantly learning new technologies to stay ahead in a rapidly evolving tech landscape.
