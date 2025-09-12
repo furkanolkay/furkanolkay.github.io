@@ -197,4 +197,4 @@ Yes, it’s that simple. It definitely has a more effective usage than normal an
 
 ---
 
-*Interested in more Flutter development content? Check out my other tutorials on [Flutter Stream Structure](/blog/stream_flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/). For more resources and tools, visit my [Resources](/resources/) page.*
+*Interested in more Flutter development content? Check out my other tutorials on [Flutter Stream Structure](/blog/stream_flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/).*

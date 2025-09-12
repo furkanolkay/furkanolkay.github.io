@@ -17,8 +17,6 @@ description: "Get in touch with Furkan Olkay - Software Engineer, Mobile Team Le
 keywords: ["contact", "get in touch", "collaboration", "software engineer", "flutter developer", "mobile development"]
 ---
 
-# Contact Me
-
 I'm always excited to connect with fellow developers, potential collaborators, and anyone interested in mobile development, Flutter, or software engineering in general.
 
 ## Let's Connect

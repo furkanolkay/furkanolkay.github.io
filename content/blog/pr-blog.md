@@ -94,6 +94,6 @@ And that brings us to the end of the blog.
 
 ---
 
-*Interested in more development content? Check out my Flutter tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/), [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/), and [Flutter Stream Structure](/blog/stream_flutter-blog/). For comprehensive development resources, visit my [Resources](/resources/) page.*
+*Interested in more development content? Check out my Flutter tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/), [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/), and [Flutter Stream Structure](/blog/stream_flutter-blog/).*
 
 #### Happy Coding to Everyone! 👋🏻

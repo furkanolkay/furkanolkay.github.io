@@ -31,21 +31,17 @@ menu:
       name: Projects
       url: /projects/
       weight: 4
-    - identifier: resources
-      name: Resources
-      url: /resources/
-      weight: 5
     - identifier: contact
       name: Contact
       url: /contact/
-      weight: 6
+      weight: 5
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 7
+      weight: 6
     - name: Tags
       url: /tags/
-      weight: 8
+      weight: 7
     - identifier: search
       name: 🔍
       url: /search/

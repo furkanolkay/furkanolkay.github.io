@@ -214,7 +214,7 @@ Instead of sharing the code for the pages of the project directly, I preferred t
 
 ---
 
-*Want to learn more about Flutter development? Check out my other tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Stream Structure](/blog/stream_flutter-blog/). For comprehensive Flutter resources and tools, visit my [Resources](/resources/) page.*
+*Want to learn more about Flutter development? Check out my other tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Stream Structure](/blog/stream_flutter-blog/).*
 
 **Connect with me:**
 - Twitter: [**_FurkayOlkay_**](http://twitter.com/FurkayOlkay)

@@ -146,6 +146,6 @@ You can access the full project [here](https://github.com/furkay/flutter_stream_
 
 ---
 
-*Explore more Flutter development content! Check out my tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/). For additional Flutter resources and development tools, visit my [Resources](/resources/) page.*
+*Explore more Flutter development content! Check out my tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/).*
 
 **Happy coding to everyone! 🙃**
