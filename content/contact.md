@@ -70,18 +70,6 @@ For business inquiries, collaboration opportunities, or general questions, feel 
 - Open source contributions
 - Technology trends and innovations
 
-### 🚀 How I Can Help
-- **Code Reviews:** Providing feedback on Flutter/mobile projects
-- **Mentorship:** Career guidance for junior developers
-- **Technical Consulting:** Architecture and development strategy
-- **Content Creation:** Technical writing and tutorial development
-
-## Response Time
-
-I make it a priority to respond to all inquiries in a timely manner:
-- **Email:** 24-48 hours
-- **LinkedIn:** 1-2 business days
-- **Social Media:** Varies, but I try to engage regularly
 
 ## Location & Time Zone
 
