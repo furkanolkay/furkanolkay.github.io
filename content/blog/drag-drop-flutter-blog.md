@@ -212,6 +212,11 @@ I tried to explain the **_Drag & Drop_** event in detail, and I hope you found i
 
 Instead of sharing the code for the pages of the project directly, I preferred to share the key points, but you can find the entire source code of the project [**here**](https://github.com/furkay/drag_example).
 
-Twitter: [**_FurkayOlkay_**](http://twitter.com/FurkayOlkay)
+---
 
-Github: [**_github.com/furkay_**](http://github.com/furkay)
+*Want to learn more about Flutter development? Check out my other tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Stream Structure](/blog/stream_flutter-blog/). For comprehensive Flutter resources and tools, visit my [Resources](/resources/) page.*
+
+**Connect with me:**
+- Twitter: [**_FurkayOlkay_**](http://twitter.com/FurkayOlkay)
+- Github: [**_github.com/furkay_**](http://github.com/furkay)
+- [Contact me](/contact/) for questions or collaborations

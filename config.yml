@@ -23,20 +23,29 @@ menu:
       name: About Me
       url: /about/
       weight: 2
-
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 3
     - identifier: projects
       name: Projects
-      url:  projects/
-      weight: 3
-
+      url: /projects/
+      weight: 4
+    - identifier: resources
+      name: Resources
+      url: /resources/
+      weight: 5
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 6
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 4
-
+      weight: 7
     - name: Tags
-      url: tags/
-      weight: 5
+      url: /tags/
+      weight: 8
     - identifier: search
       name: 🔍
       url: /search/
@@ -50,9 +59,9 @@ outputs:
 
 params:
   env: production
-  title: MDM
-  description: "In my personal blog, I share insights from my experience as a software developer and team lead, including my work with Flutter."
-  keywords: [Software, Developer, Mobile Development Manager]
+  title: "Furkan Olkay - Software Engineer & Flutter Developer"
+  description: "Software Engineer, Mobile Team Lead, and Flutter Developer. Expert in mobile app development, team leadership, and creating high-performance cross-platform applications. Explore my projects, blog posts, and resources."
+  keywords: [Software Engineer, Flutter Developer, Mobile Development, Team Lead, Cross-platform Apps, Dart, Mobile Apps, Software Development, Technology Blog, Programming Tutorials]
   author: Furkan Olkay
   DateFormat: "2024 January 14"
   defaultTheme: light

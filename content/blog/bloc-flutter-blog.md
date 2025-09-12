@@ -194,3 +194,7 @@ In **_BlocBuilder_**, by calling **_state.when_**, we see one of the best featur
 Yes, it’s that simple. It definitely has a more effective usage than normal and has added many features to our classes. Normally, we would have to write extra code for these features.
 
 **Happy Coding to Everyone!**
+
+---
+
+*Interested in more Flutter development content? Check out my other tutorials on [Flutter Stream Structure](/blog/stream_flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/). For more resources and tools, visit my [Resources](/resources/) page.*

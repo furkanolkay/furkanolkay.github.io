@@ -144,4 +144,8 @@ That's it! You can run the project and observe the changes in the text.
 
 You can access the full project [here](https://github.com/furkay/flutter_stream_example).
 
+---
+
+*Explore more Flutter development content! Check out my tutorials on [Flutter BloC + Freezed](/blog/bloc-flutter-blog/) and [Flutter Drag & Drop](/blog/drag-drop-flutter-blog/). For additional Flutter resources and development tools, visit my [Resources](/resources/) page.*
+
 **Happy coding to everyone! 🙃**
