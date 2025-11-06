@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+const blogPostCount = blogPosts.filter(post => !post.data.draft).length;
+---
+
+<section class="py-24 relative overflow-hidden bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900" id="stats">
+  <!-- Background Effects -->
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+  </div>
+
+  <div class="container mx-auto relative z-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="relative group stats-card">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-blue-400 text-4xl font-bold">
+            <span class="counter" data-target="10">0</span>+
+          </h3>
+          <p class="text-gray-400" data-i18n="stats.projects">Applications Developed</p>
+        </div>
+      </div>
+
+      <div class="relative group stats-card">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-purple-400 text-4xl font-bold">
+            <span class="counter" data-target="5">0</span>+
+          </h3>
+          <p class="text-gray-400" data-i18n="stats.experience">Years of Experience</p>
+        </div>
+      </div>
+
+      <div class="relative group stats-card">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-green-400 text-4xl font-bold">
+            <span class="counter" data-target={blogPostCount}>0</span>+
+          </h3>
+          <p class="text-gray-400" data-i18n="stats.blogPosts">Blog Posts</p>
+        </div>
+      </div>
+
+      <div class="relative group stats-card">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="mb-2 text-orange-400 text-4xl font-bold">
+            <span class="counter" data-target="10">0</span>+
+          </h3>
+          <p class="text-gray-400" data-i18n="stats.technologies">Technologies Used</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Counter animation
+  const animateCounter = (element) => {
+    const target = parseInt(element.dataset.target || '0');
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target.toString();
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current).toString();
+      }
+    }, 16);
+  };
+
+  // Intersection Observer for counters
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target.querySelector('.counter');
+        if (counter && !counter.dataset.animated) {
+          counter.dataset.animated = 'true';
+          animateCounter(counter);
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stats-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+<style>
+  .stats-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .stats-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+  // Fade in animation on scroll
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.stats-card').forEach(card => {
+    statsObserver.observe(card);
+  });
+</script>
+

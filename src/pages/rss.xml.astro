@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+
+const blogPosts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const items = blogPosts.map((post) => ({
+  title: post.data.title,
+  link: `https://furkanolkay.com/blog/${post.id}`,
+  pubDate: post.data.date,
+  description: post.data.description || post.data.title,
+}));
+---
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Furkan Olkay - Blog</title>
+    <description>Software Engineer, Mobile Team Lead, and Flutter Developer. Blog posts about Flutter development, mobile app development, and software engineering.</description>
+    <link>https://furkanolkay.com</link>
+    <language>en</language>
+    <managingEditor>contact@furkanolkay.com</managingEditor>
+    <webMaster>contact@furkanolkay.com</webMaster>
+    <lastBuildDate>{new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="https://furkanolkay.com/rss.xml" rel="self" type="application/rss+xml"/>
+    {items.map((item) => (
+      <item>
+        <title>{item.title}</title>
+        <link>{item.link}</link>
+        <guid>{item.link}</guid>
+        <pubDate>{new Date(item.pubDate).toUTCString()}</pubDate>
+        <description>{item.description}</description>
+      </item>
+    ))}
+  </channel>
+</rss>
+

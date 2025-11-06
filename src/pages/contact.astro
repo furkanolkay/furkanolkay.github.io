@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Contact Me - Furkan Olkay"
+  description="Get in touch with Furkan Olkay - Software Engineer, Mobile Team Lead, and Flutter Developer. Contact for collaborations, questions, or opportunities."
+  keywords={["contact", "get in touch", "collaboration", "software engineer", "flutter developer", "hire flutter developer"]}
+>
+  <Navigation />
+  
+  <div class="pt-20">
+    <Contact />
+  </div>
+
+  <!-- Additional Info Section -->
+  <section class="py-24 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-4">İletişim Kanallarım</h2>
+          <p class="text-gray-400 text-lg">
+            Birlikte çalışmak veya iletişim kurmak için aşağıdaki kanallardan bana ulaşabilirsiniz
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Profesyonel Ağlar
+            </h3>
+            <ul class="space-y-3 text-gray-300">
+              <li>
+                <a href="https://linkedin.com/in/furkan-saffet-olkay" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                  LinkedIn → Profesyonel ağ ve kariyer güncellemeleri
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/furkanolkay" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                  GitHub → Açık kaynak projelerim ve kodlarım
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              Sosyal Medya
+            </h3>
+            <ul class="space-y-3 text-gray-300">
+              <li>
+                <a href="https://twitter.com/furkanolkay" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                  Twitter → Hızlı güncellemeler ve teknik tartışmalar
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/@furkanolkay" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">
+                  Medium → Teknik yazılarım ve makalelerim
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8">
+          <h3 class="text-white text-2xl font-bold mb-6">İlgi Alanlarım</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-purple-400 font-semibold mb-3">İşbirliği Fırsatları</h4>
+              <ul class="space-y-2 text-gray-300">
+                <li>• Açık kaynak projeler</li>
+                <li>• Teknik yazı yazma</li>
+                <li>• Konferans ve etkinlikler</li>
+                <li>• Danışmanlık hizmetleri</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-purple-400 font-semibold mb-3">Sevdiğim Konular</h4>
+              <ul class="space-y-2 text-gray-300">
+                <li>• Flutter best practices</li>
+                <li>• Mobil mimari tasarımı</li>
+                <li>• Ekip liderliği</li>
+                <li>• Teknoloji trendleri</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 pt-6 border-t border-purple-500/30">
+            <p class="text-gray-400 text-sm">
+              <strong class="text-white">Lokasyon:</strong> İstanbul, Türkiye (GMT+3)
+            </p>
+            <p class="text-gray-400 text-sm mt-2">
+              Acil konular için lütfen saat farkını göz önünde bulundurun.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+

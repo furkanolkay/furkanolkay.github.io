@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout 
+  title="Blog - Flutter & Mobile Development Insights"
+  description="Explore Flutter development tutorials, mobile app development insights, and software engineering best practices. Learn from real-world experiences and technical deep-dives."
+  keywords={["Flutter Blog", "Mobile Development Tutorials", "Software Engineering", "Flutter Tutorials", "Mobile App Development"]}
+>
+  <Navigation />
+  
+  <section class="pt-32 pb-24 min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+    <div class="container mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full mb-6">
+          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+          <span class="text-purple-300" data-i18n="blog.badge">Latest Posts</span>
+        </div>
+        
+        <h1 class="text-5xl font-bold text-white mb-4" data-i18n="blog.title">
+          My Blog Posts
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="blog.description">
+          Articles about Flutter, mobile development, and software engineering
+        </p>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogPosts.map((post) => {
+          const date = new Date(post.data.date);
+          // Month names will be updated by JavaScript based on language
+          const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          const formattedDate = date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
+          
+          const postSlug = post.id.replace(/\.md$/, '');
+          return (
+            <a href={'/blog/' + postSlug} class="group relative blog-card">
+              <div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              
+              <article class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 hover:bg-white/10 transition-all h-full flex flex-col">
+                <div class="flex items-center gap-2 mb-4">
+                  <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span class="text-gray-400 text-sm">{formattedDate}</span>
+                </div>
+                
+                <h2 class="mb-3 text-white group-hover:text-purple-400 transition-colors text-xl font-bold">
+                  {post.data.title}
+                </h2>
+                
+                {post.data.description && (
+                  <p class="text-gray-300 mb-4 line-clamp-3 flex-grow">{post.data.description}</p>
+                )}
+                
+                {post.data.tags && post.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {post.data.tags.slice(0, 3).map(tag => (
+                      <span class="px-3 py-1.5 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm text-purple-300">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                
+                <div class="mt-auto pt-4 border-t border-white/10">
+                  <span class="text-purple-400 group-hover:text-pink-400 transition-colors flex items-center gap-2">
+                    Read More
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </article>
+            </a>
+          );
+        })}
+      </div>
+
+      {blogPosts.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-gray-400 text-lg">No blog posts found yet.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .blog-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .blog-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Fade in animation on scroll
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.blog-card').forEach(card => {
+    cardObserver.observe(card);
+  });
+</script>

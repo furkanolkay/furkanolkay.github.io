@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => {
+    // Remove .md extension from slug if present
+    const slug = project.id.replace(/\.md$/, '');
+    return {
+      params: { slug },
+      props: { project },
+    };
+  });
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout 
+  title={project.data.title}
+  description={project.data.description}
+  keywords={project.data.keywords || project.data.tags}
+>
+  <Navigation />
+  
+  <article class="pt-32 pb-24 min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <!-- Back Button -->
+        <a href="/projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors mb-8 group">
+          <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Projelere Dön
+        </a>
+
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full mb-6">
+            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            <span class="text-purple-300">Proje</span>
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            {project.data.title}
+          </h1>
+
+          {project.data.tags && project.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.data.tags.map(tag => (
+                <span class="px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm text-purple-300">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </header>
+
+        <!-- Cover Image -->
+        {project.data.cover?.image && (
+          <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-900/20 to-slate-900/20 flex items-center justify-center p-8">
+            <img 
+              src={'/projects/' + project.data.cover.image} 
+              alt={`${project.data.title} - ${project.data.description || 'Mobile Application Project'}`}
+              class="max-w-[70%] max-h-[400px] w-auto h-auto object-contain"
+            />
+          </div>
+        )}
+
+        <!-- Description -->
+        {project.data.description && (
+          <div class="mb-12">
+            <p class="text-xl text-gray-300 leading-relaxed bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+              {project.data.description}
+            </p>
+          </div>
+        )}
+
+        <!-- Content -->
+        <div class="prose prose-invert prose-lg max-w-none">
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12">
+            <div class="prose prose-invert prose-headings:text-white prose-p:text-gray-300 prose-a:text-purple-400 prose-strong:text-white prose-code:text-purple-400 prose-pre:bg-slate-900 prose-pre:border prose-pre:border-white/10 prose-img:rounded-2xl prose-img:shadow-xl">
+              <Content />
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <a href="/projects" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Projelere Dön
+          </a>
+          
+          <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white rounded-xl hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all">
+            Ana Sayfa
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>
+
+<style is:global>
+  .prose {
+    color: #d1d5db;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: white;
+    font-weight: 700;
+  }
+  
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+  }
+  
+  .prose a {
+    color: #a78bfa;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(168, 139, 250, 0.3);
+    transition: all 0.2s;
+  }
+  
+  .prose a:hover {
+    color: #f472b6;
+    border-bottom-color: rgba(244, 114, 182, 0.5);
+  }
+  
+  .prose code {
+    background: rgba(168, 85, 247, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+  }
+  
+  .prose pre {
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .prose pre code {
+    background: transparent;
+    padding: 0;
+    color: #e2e8f0;
+  }
+  
+  .prose img {
+    margin: 2rem 0;
+    max-width: 100%;
+  }
+  
+  .prose ul, .prose ol {
+    margin: 1.25rem 0;
+    padding-left: 2rem;
+  }
+  
+  .prose li {
+    margin: 0.5rem 0;
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid #9333ea;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    color: #cbd5e1;
+    font-style: italic;
+  }
+  
+  .prose hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+  }
+</style>

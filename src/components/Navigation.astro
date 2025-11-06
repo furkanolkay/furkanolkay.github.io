@@ -1,0 +1,112 @@
+---
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navigation">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group cursor-pointer">
+        <img src="/logo.png" alt="Furkan Olkay Logo" class="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300" />
+        <span class="text-white text-xl font-semibold">
+          Furkan Olkay
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="/" class="text-gray-300 hover:text-white transition-colors relative group">
+          <span data-i18n="nav.home">Home</span>
+          <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all"></span>
+        </a>
+        <a href="/#about" class="text-gray-300 hover:text-white transition-colors relative group">
+          <span data-i18n="nav.about">About</span>
+          <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all"></span>
+        </a>
+        <a href="/#skills" class="text-gray-300 hover:text-white transition-colors relative group">
+          <span data-i18n="nav.skills">Skills</span>
+          <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all"></span>
+        </a>
+        <a href="/#projects" class="text-gray-300 hover:text-white transition-colors relative group">
+          <span data-i18n="nav.projects">Projects</span>
+          <span class="absolute -bottom-1 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all"></span>
+        </a>
+        <a href="/#contact" class="px-6 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all" data-i18n="nav.contact">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden p-2 text-white" id="mobile-menu-btn" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="close-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="fixed inset-0 z-40 lg:hidden hidden bg-slate-950/95 backdrop-blur-2xl" id="mobile-menu">
+    <div class="h-full flex flex-col items-center justify-center gap-8 p-8">
+      <a href="/" class="text-2xl text-white hover:text-purple-400 transition-colors" data-i18n="nav.home">
+        Home
+      </a>
+      <a href="/#about" class="text-2xl text-white hover:text-purple-400 transition-colors" data-i18n="nav.about">
+        About
+      </a>
+      <a href="/#skills" class="text-2xl text-white hover:text-purple-400 transition-colors" data-i18n="nav.skills">
+        Skills
+      </a>
+      <a href="/#projects" class="text-2xl text-white hover:text-purple-400 transition-colors" data-i18n="nav.projects">
+        Projects
+      </a>
+      <a href="/#contact" class="px-10 py-4 bg-purple-600 text-white rounded-xl hover:bg-purple-700 text-lg transition-all" data-i18n="nav.contact">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav.scrolled {
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.1);
+  }
+</style>
+
+<script is:inline>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+  }
+
+</script>

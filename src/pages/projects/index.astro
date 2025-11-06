@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => (b.data.date?.getTime() || 0) - (a.data.date?.getTime() || 0));
+---
+
+<BaseLayout 
+  title="Projects - Mobile Apps & Software Development"
+  description="Explore my portfolio of mobile applications and software projects. Featured Flutter apps including BudgetWatcher, ExpSphere, and Garb - showcasing expertise in cross-platform development."
+  keywords={["Flutter Projects", "Mobile App Portfolio", "Software Development Projects", "Cross-platform Apps"]}
+>
+  <Navigation />
+  
+  <section class="pt-32 pb-24 min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+    <div class="container mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full mb-6">
+          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+          <span class="text-purple-300" data-i18n="projects.badge">Featured Projects</span>
+        </div>
+        
+        <h1 class="text-5xl font-bold text-white mb-4" data-i18n="projects.pageTitle">
+          My Projects
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg" data-i18n="projects.pageDescription">
+          A collection of mobile applications and software projects I've developed with Flutter.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => {
+          const projectSlug = project.id.replace(/\.md$/, '');
+          return (
+          <a href={'/projects/' + projectSlug} class="group relative project-card">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
+            
+            <article class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all h-full flex flex-col">
+              {project.data.cover?.image && (
+                <div class="relative overflow-hidden aspect-[3/2] bg-gradient-to-br from-purple-900/20 to-slate-900/20 flex items-center justify-center p-4">
+                  <img 
+                    src={'/projects/' + project.data.cover.image} 
+                    alt={project.data.title} 
+                    class="max-w-[85%] max-h-[85%] w-auto h-auto object-contain group-hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              )}
+              
+              <div class="p-6 flex-grow flex flex-col">
+                <h2 class="mb-3 text-white group-hover:text-purple-400 transition-colors text-2xl font-bold">
+                  {project.data.title}
+                </h2>
+                
+                {project.data.description && (
+                  <p class="text-gray-400 mb-4 line-clamp-3 flex-grow">{project.data.description}</p>
+                )}
+                
+                {project.data.tags && project.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {project.data.tags.slice(0, 3).map(tag => (
+                      <span class="px-3 py-1.5 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm text-purple-300">
+                        {tag}
+                      </span>
+                    ))}
+                    {project.data.tags.length > 3 && (
+                      <span class="px-3 py-1.5 bg-white/5 text-gray-400 rounded-full text-sm">
+                        +{project.data.tags.length - 3}
+                      </span>
+                    )}
+                  </div>
+                )}
+                
+                <div class="mt-auto pt-4 border-t border-white/10">
+                  <span class="text-purple-400 group-hover:text-pink-400 transition-colors flex items-center gap-2">
+                    <span data-i18n="projects.viewDetails">View Details</span>
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </a>
+          );
+        })}
+      </div>
+
+      {projects.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-gray-400 text-lg" data-i18n="projects.noProjects">No projects found yet.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+  // Fade in animation on scroll
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    cardObserver.observe(card);
+  });
+</script>
