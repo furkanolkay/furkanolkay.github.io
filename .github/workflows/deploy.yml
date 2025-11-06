@@ -54,6 +54,25 @@ jobs:
           NODE_ENV: production
         run: npm run build
       
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          echo ""
+          echo "Checking for CNAME:"
+          ls -la dist/CNAME || echo "CNAME not found in dist"
+          echo ""
+          echo "Checking for index.html:"
+          ls -la dist/index.html || echo "index.html not found"
+      
+      - name: Ensure CNAME exists
+        run: |
+          if [ ! -f dist/CNAME ]; then
+            echo "CNAME not found, copying from public/"
+            cp public/CNAME dist/CNAME || cp CNAME dist/CNAME || echo "CNAME file not found"
+          fi
+          cat dist/CNAME || echo "CNAME file is empty or missing"
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
