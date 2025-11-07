@@ -29,6 +29,7 @@ const translations = {
       experience: "Years of Experience",
       blogPosts: "Blog Posts",
       technologies: "Technologies Used",
+      downloads: "Total Downloads",
     },
     about: {
       badge: "About Me",
@@ -153,6 +154,7 @@ const translations = {
       experience: "Yıllık Deneyim",
       blogPosts: "Blog Yazıları",
       technologies: "Kullanılan Teknoloji",
+      downloads: "Toplam İndirme",
     },
     about: {
       badge: "Hakkımda",

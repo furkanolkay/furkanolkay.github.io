@@ -15,61 +15,65 @@ const blogPostCount = blogPosts.filter(post => !post.data.draft).length;
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="relative group stats-card">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
-          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all">
+          <div class="relative w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center stats-icon">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl animate-ping opacity-30"></div>
+            <svg class="w-8 h-8 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
           <h3 class="mb-2 text-blue-400 text-4xl font-bold">
-            <span class="counter" data-target="10">0</span>+
+            <span class="counter" data-target="10">0</span><span class="text-blue-300">+</span>
           </h3>
-          <p class="text-gray-400" data-i18n="stats.projects">Applications Developed</p>
+          <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="stats.projects">Applications Developed</p>
         </div>
       </div>
 
       <div class="relative group stats-card">
         <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
-          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all">
+          <div class="relative w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center stats-icon">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl animate-ping opacity-30"></div>
+            <svg class="w-8 h-8 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
           <h3 class="mb-2 text-purple-400 text-4xl font-bold">
-            <span class="counter" data-target="5">0</span>+
+            <span class="counter" data-target="5">0</span><span class="text-purple-300">+</span>
           </h3>
-          <p class="text-gray-400" data-i18n="stats.experience">Years of Experience</p>
+          <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="stats.experience">Years of Experience</p>
         </div>
       </div>
 
       <div class="relative group stats-card">
         <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
-          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(34,197,94,0.4)] transition-all">
+          <div class="relative w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center stats-icon">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl animate-ping opacity-30"></div>
+            <svg class="w-8 h-8 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
           <h3 class="mb-2 text-green-400 text-4xl font-bold">
-            <span class="counter" data-target={blogPostCount}>0</span>+
+            <span class="counter" data-target={blogPostCount}>0</span><span class="text-green-300">+</span>
           </h3>
-          <p class="text-gray-400" data-i18n="stats.blogPosts">Blog Posts</p>
+          <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="stats.blogPosts">Blog Posts</p>
         </div>
       </div>
 
       <div class="relative group stats-card">
-        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
-        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center">
-          <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:scale-105 hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] transition-all">
+          <div class="relative w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center stats-icon">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl animate-ping opacity-30"></div>
+            <svg class="w-8 h-8 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
           </div>
-          <h3 class="mb-2 text-orange-400 text-4xl font-bold">
-            <span class="counter" data-target="10">0</span>+
+          <h3 class="mb-2 text-indigo-400 text-3xl lg:text-4xl font-bold">
+            <span class="counter-large" data-target="1000000">0</span><span class="text-indigo-300">+</span>
           </h3>
-          <p class="text-gray-400" data-i18n="stats.technologies">Technologies Used</p>
+          <p class="text-gray-400 group-hover:text-gray-300 transition-colors" data-i18n="stats.downloads">Total Downloads</p>
         </div>
       </div>
     </div>
@@ -77,22 +81,46 @@ const blogPostCount = blogPosts.filter(post => !post.data.draft).length;
 </section>
 
 <script is:inline>
-  // Counter animation
+  // Format number with dots (e.g., 1000000 -> 1.000.000)
+  const formatNumber = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  };
+
+  // Counter animation with easing
   const animateCounter = (element) => {
     const target = parseInt(element.dataset.target || '0');
     const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
+    const startTime = Date.now();
+    const isLargeNumber = target >= 1000;
+    
+    const easeOutCubic = (t) => {
+      return 1 - Math.pow(1 - t, 3);
+    };
 
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        element.textContent = target.toString();
-        clearInterval(timer);
+    const updateCounter = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      const current = Math.floor(target * eased);
+      
+      if (isLargeNumber) {
+        element.textContent = formatNumber(current);
       } else {
-        element.textContent = Math.floor(current).toString();
+        element.textContent = current.toString();
       }
-    }, 16);
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        if (isLargeNumber) {
+          element.textContent = formatNumber(target);
+        } else {
+          element.textContent = target.toString();
+        }
+      }
+    };
+
+    updateCounter();
   };
 
   // Intersection Observer for counters
@@ -100,9 +128,16 @@ const blogPostCount = blogPosts.filter(post => !post.data.draft).length;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const counter = entry.target.querySelector('.counter');
+        const counterLarge = entry.target.querySelector('.counter-large');
+        
         if (counter && !counter.dataset.animated) {
           counter.dataset.animated = 'true';
           animateCounter(counter);
+        }
+        
+        if (counterLarge && !counterLarge.dataset.animated) {
+          counterLarge.dataset.animated = 'true';
+          animateCounter(counterLarge);
         }
       }
     });

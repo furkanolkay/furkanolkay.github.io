@@ -5,11 +5,15 @@
   <div class="container mx-auto">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group cursor-pointer whitespace-nowrap">
-        <img src="/logo.png" alt="Furkan Olkay Logo" class="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-        <span class="text-white text-xl font-semibold whitespace-nowrap">
-          Furkan Olkay
-        </span>
+      <a href="/" class="logo-link group cursor-pointer whitespace-nowrap">
+        <div class="flex flex-col">
+          <span class="logo-text text-xl font-bold tracking-tight leading-tight">
+            Furkan Olkay
+          </span>
+          <span class="text-xs text-gray-500 font-medium tracking-wider uppercase opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+            Software Developer
+          </span>
+        </div>
       </a>
 
       <!-- Desktop Navigation -->
@@ -75,6 +79,21 @@
     backdrop-filter: blur(24px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.1);
+  }
+
+  .logo-text {
+    background: linear-gradient(135deg, rgb(196, 181, 253), rgb(251, 207, 232), rgb(191, 219, 254));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+  }
+
+  .logo-link:hover .logo-text {
+    background: linear-gradient(135deg, rgb(221, 214, 254), rgb(253, 231, 243), rgb(219, 234, 254));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 </style>
 
